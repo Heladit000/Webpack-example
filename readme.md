@@ -3,7 +3,7 @@
 Webpack fundamentals example with test build project
 https://webpack-build.netlify.app/
 
-[![deploy](https://media.giphy.com/media/bUGmkCQMC8jHRQzHA0/giphy.gif)]
+![deploy](https://media.giphy.com/media/bUGmkCQMC8jHRQzHA0/giphy.gif)
 
 ## Features
 
