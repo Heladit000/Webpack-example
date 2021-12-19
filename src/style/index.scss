@@ -1,0 +1,27 @@
+@import "./colors";
+
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 400;
+  src: url("@assets/fonts/ubuntu-v15-latin-regular.eot");
+  src: local(""),
+    url("@assets/fonts/ubuntu-v15-latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("@assets/fonts/ubuntu-v15-latin-regular.woff2") format("woff2"),
+    url("@assets/fonts/ubuntu-v15-latin-regular.woff") format("woff"),
+    url("@assets/fonts/ubuntu-v15-latin-regular.ttf") format("truetype"),
+    url("@assets/fonts/ubuntu-v15-latin-regular.svg#Ubuntu") format("svg");
+}
+
+body {
+  margin: 0;
+  display: flex;
+  font-family: "Ubuntu", sans-serif;
+  background-color: $background-color;
+  color: $font-color;
+
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}

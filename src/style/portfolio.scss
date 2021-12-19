@@ -1,0 +1,51 @@
+@import "./colors";
+
+.portfolio {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+  width: fit-content;
+  padding: 3%;
+  background-color: $glass-background-color;
+  box-shadow: 10px 10px #000000;
+
+  animation-name: portfolioEntry;
+  animation-fill-mode: forwards;
+  animation-duration: 3s;
+
+
+  @keyframes portfolioEntry {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 100%;
+      transform: translateY(0);
+
+    }
+  }
+
+  .portfolio__image {
+    border-radius: 50%;
+    border: 2px solid;
+    animation-name: profileRotation;
+    animation-fill-mode: forwards;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    width: 60%;
+
+    @keyframes profileRotation {
+      0% {
+        border-color: $primary-color;
+      }
+      50% {
+        border-color: transparent;
+      }
+      100% {
+        border-color: $primary-color;
+      }
+    }
+  }
+}
