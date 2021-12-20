@@ -1,4 +1,4 @@
-//production configuration
+//developing configuration
 
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -22,9 +22,10 @@ module.exports = {
     extensions: [".js"],
     alias: {
       "@style": path.resolve(__dirname, "src/style"),
-      "@assets": path.resolve(__dirname, "src/assets")
-    }
+      "@assets": path.resolve(__dirname, "src/assets"),
+    },
   },
+  mode: "development",
   module: {
     rules: [
       {
@@ -36,7 +37,7 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader"]
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
         test: /\.s[ac]ss$/,
@@ -46,9 +47,9 @@ module.exports = {
         test: /\.(eot|svg|ttf|woff|woff2)$/i,
         type: "asset/resource",
         generator: {
-          filename: "assets/fonts/[hash][ext][query]"
-        }
-      }
+          filename: "assets/fonts/[hash][ext][query]",
+        },
+      },
     ],
   },
   plugins: [
@@ -59,24 +60,32 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [
-        { 
+        {
           from: path.resolve(__dirname, "src", "assets/img"),
           to: "assets/img",
-        }
+        },
       ],
     }),
     new MiniCssExtractPlugin({
       filename: "style/[name].[contenthash].css",
     }),
     new Dotenv(),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
   ],
   optimization: {
-    minimize: true,
+    minimize: false,
     minimizer: [
       new CssMinimizerPlugin(),
       new TercerPlugin(),
       new HtmlMinimizerPlugin(),
     ],
+  },
+  devServer: {
+    static: {
+      directory: path.resolve(__dirname, "dist"),
+    },
+    compress: true,
+    open: true,
+    port: 3001,
   },
 };

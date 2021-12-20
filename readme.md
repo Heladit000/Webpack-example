@@ -27,19 +27,33 @@ Install all dependencies
 npm install
 ```
 
-Run in production mode
+create .env file with public API values
+
+```
+PROFILE_API=https://randomuser.me/api
+IMAGE_API=https://picsum.photos
+```
+## Build and development 
+### production mode
+Run in production mode 
+> you can open the build in `dist/index.html`
 
 ```sh
 npm run build
 ```
+Run in production mode with remote env keys
 
-Run in developing mode and automatic reload
+```sh
+npm run build:remote-env
+```
+
+### developing mode
+Run in developing mode 
+> automatic changes and live server
 
 ```sh
 npm run dev
 ```
-
-you can open the build in `dist/index.html`
 
 ## License
 

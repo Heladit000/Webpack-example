@@ -1,6 +1,7 @@
 
 //Return json data from api call 
 const apiCall = (url) => {
+  console.log(url)
   return new Promise((resolve, reject) => {
     fetch(url)
       .then((response) => {
