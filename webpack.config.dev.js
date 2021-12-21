@@ -9,8 +9,12 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const HtmlMinimizerPlugin = require("html-minimizer-webpack-plugin");
 const TercerPlugin = require("terser-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+
 
 const Dotenv = require("dotenv-webpack");
+
+
 
 module.exports = {
   entry: "./src/scripts/index.js",
@@ -26,6 +30,7 @@ module.exports = {
     },
   },
   mode: "development",
+  devtool: "source-map",
   module: {
     rules: [
       {
@@ -71,6 +76,7 @@ module.exports = {
     }),
     new Dotenv(),
     new CleanWebpackPlugin(),
+    new BundleAnalyzerPlugin()
   ],
   optimization: {
     minimize: false,
@@ -86,6 +92,7 @@ module.exports = {
     },
     compress: true,
     open: true,
+    historyApiFallback: true,
     port: 3001,
   },
 };
