@@ -88,7 +88,7 @@ module.exports = {
   },
   devServer: {
     static: {
-      directory: path.resolve(__dirname, "dist"),
+      directory: path.resolve(__dirname, "public"),
     },
     compress: true,
     open: true,
